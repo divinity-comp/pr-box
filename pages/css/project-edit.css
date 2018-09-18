@@ -1,0 +1,140 @@
+#project-single {
+    width:100%;
+}
+#projectDeats {
+    width: calc(100% - 43em);
+    float: left;
+}
+#projectDate {
+    float: right;
+}
+#projectDate p {   
+    margin: 11px 0 2px;
+    font-weight: bold;
+}
+#projectDate i {
+    font-size:1.3em;
+    font-weight:400;
+    vertical-align: middle;
+}
+#projectDate input {
+    border: 0;
+    margin-left: 10px;
+    width: 100px;
+    vertical-align: middle;
+    margin-top: 2px;
+    font-size: 1.2em;
+}
+#eventSettings {
+    margin-left: auto;
+    margin-right: 20px;
+    float: right;
+    padding: 12px 15px;
+    font-size: 1.2em;
+    margin: 10px 20px 0;
+    -webkit-transition: color 0.4s,background 0.2s; /* Safari */
+    transition: color 0.4s,background 0.2s;
+}
+#eventSettings[open="true"] {
+    color: #fff;
+    background: #45c2c5;
+}
+#eventOptions {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    display:none;
+}
+#eventOptions p {
+    margin: 0;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 2px 0px #2d2d2d;
+    box-shadow: 0px 0px 2px 0px #2d2d2d;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    -webkit-transition: color 0.2s,background 0.4s; /* Safari */
+    transition: color 0.2s,background 0.4s;text-transform: capitalize;
+}
+#eventOptions p i {
+    margin-right: 10px;
+}
+#projectSettings {
+      color: #2f337d;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid;
+    padding: 12px;
+    margin-top: 8px;
+     float: right;
+    margin-right: 10px;
+}
+#projectSettings[mobile="true"] {
+    display: none;
+}
+
+#eventOptions p.blueBg[active="true"] {
+      background: #48c2c5;
+    background: -webkit-gradient(linear, left top, right top, from(#48c2c5),to(#1c1f4d));
+    background: linear-gradient(to right, #48c2c5 0%,#1c1f4d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48c2c5', endColorstr='#1c1f4d',GradientType=1 );
+}
+#eventOptions p.lightBg[active="true"] {
+        background: #fcd3ce;
+    background: linear-gradient(45deg, #fcd3ce 0%,#48c2c5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd3ce', endColorstr='#48c2c5',GradientType=1 );
+}
+#eventOptions p.redBg[active="true"] {background: #ce0c4d;
+    background: linear-gradient(45deg, #ce0c4d 1%,#2c327b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ce0c4d', endColorstr='#2c327b',GradientType=1 );
+}
+#eventOptions p.pinkBg[active="true"] {    background: #fcd3ce;
+    background: linear-gradient(45deg, #fcd3ce 0%,#ce0c4d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcd3ce', endColorstr='#ce0c4d',GradientType=1 );
+}
+#eventOptions p.orangeBg[active="true"] {
+        background: #ffc709;
+    background: linear-gradient(45deg, #ffc709 1%,#ce0c4d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc709', endColorstr='#ce0c4d',GradientType=1 );
+    }
+#eventOptions p.greenBg[active="true"] {
+    background: #ffc709;
+    background: linear-gradient(45deg, #ffc709 0%,#48c2c5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc709', endColorstr='#48c2c5',GradientType=1 );
+    }
+#eventOptions p[active="true"] {
+    color:#fff;
+}
+@media all and (max-width: 500px)  {
+    #projectDate[nomobile="true"],#eventSettings[nomobile="true"] {
+        display: none;
+    }
+    
+    #projectSettings[mobile="true"] {
+        display: block;
+    }
+    #projectDeats {
+          width: calc(100% - 135px);
+        margin: 7px 0;
+    }
+    #projectSettingsOverlay #projectDate[nomobile="true"],#projectSettingsOverlay #eventSettings[nomobile="true"] {
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+    }
+    #eventSettings {
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+    #eventOptions {
+    float: left;
+    width: 100%;
+        position: relative;
+    }
+    .date {
+            max-width: 215px;
+    }
+}

@@ -1,0 +1,12 @@
+<div id="loginPage" class="blue-gradient">
+    <div class="alignFlex">
+        <img src="assets/logo.svg"/>
+        <form id="login" class="login"> 
+            <input name="email" type="email" placeholder="Email" required="">
+            <input name="pass" type="password" placeholder="Password" required="">
+            <button class="bWait buttonRed" onclick="loginOrPasswordReset(event)">Login</button>
+        </form>
+        <div id="error"></div>
+        <p class="forgotPass" onclick="forgotPassword(this)">Forgotten your password?</p>
+    </div>
+</div>
