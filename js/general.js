@@ -286,6 +286,13 @@ function loading(active) {
 function loadPanel(ele) {
     toggleMobile(idc("mobileMenu"));
     loading(1);
+    
+    if(ele.getAttribute("linkid") == "dash") {
+        loadMainDashboard();
+        return;
+    }
+        
+        
     ajaxRequestGet(urlInit + "/app/"+ appVersion + "/page/" + ele.getAttribute("linkid"),
     function(response) {
         loading(0);
@@ -295,12 +302,13 @@ function loadPanel(ele) {
         
         var jsAdd = document.createElement("script");
         jsAdd.src = "pages/js/"+ pLinkId + ".js";
-        idc("main").appendChild(jsAdd);
         ajaxRequestGet("pages/css/"+ pLinkId + ".css",
         function(cssDa) {
+            
             var cssAdd = document.createElement("style");
             cssAdd.innerHTML = cssDa;
             idc("main").appendChild(cssAdd);
+            idc("main").appendChild(jsAdd);
         });
     });
 }
@@ -308,7 +316,7 @@ function loadSingleModule(ele,element) {
     loading(1);
     
     var addExtra = "";
-    if(ele.className.includes("add")) 
+    if(ele.className.includes("add"))
         addExtra = '?add=add';
     else
         addExtra = '?projid=' + ele.parentNode.children[0].id;
@@ -320,12 +328,12 @@ function loadSingleModule(ele,element) {
         
         var jsAdd = document.createElement("script");
         jsAdd.src = "pages/js/"+ element + ".js";
-        idc("main").appendChild(jsAdd);
         ajaxRequestGet("pages/css/"+ element + ".css",
         function(cssDa) {
             var cssAdd = document.createElement("style");
             cssAdd.innerHTML = cssDa;
             idc("main").appendChild(cssAdd);
+        idc("main").appendChild(jsAdd);
         });
     });
 }

@@ -372,10 +372,7 @@ function getMainDashboard() {
             navMenu.getElementsByTagName("li")[0].className = "active";
             setDashboardDimensions();
             // test load page
-            var docEl = document.createElement("div");
-            docEl.innerHTML = '  <p id="1019" rev="" class="hidden_data">{"name":"default"}</p>';
-            idc("main").appendChild(docEl);
-            loadSingleModule(docEl.children[0],'project-edit');
+            loadMainDashboard();
         });
         loadOldNotifs();
        
@@ -384,7 +381,28 @@ function getMainDashboard() {
         // loadElement("stats");
     }, "");
 }
-
+function loadMainDashboard() {
+    loadElement("timeline");
+    loadElement("tasks");
+    loadElement("stats");
+    loadElement("support-time");
+    var pLinkId = "dash";
+    ajaxRequestGet("pages/css/"+ pLinkId + ".css",
+    function(cssDa) {
+        var cssAdd = document.createElement("style");
+        cssAdd.innerHTML = cssDa;
+        idc("main").appendChild(cssAdd);
+    var jsAdd = document.createElement("script");
+    jsAdd.src = "pages/js/"+ pLinkId + ".js";
+    idc("main").appendChild(jsAdd);
+    });
+    setTimeout(function(){ 
+        idc("main").appendChild(idc("timeline"));
+        idc("main").appendChild(idc("tasksLeft"));
+        idc("main").appendChild(idc("statsLeft"));
+        idc("main").appendChild(idc("supportTime"));
+    }, 1000);
+}
 function setDashboardDimensions() {
     var clientDeats = idc("clientDeats");
     var panelLinks = idc("panelLinks");
