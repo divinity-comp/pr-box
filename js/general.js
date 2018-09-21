@@ -39,6 +39,20 @@ function gbc(id, parentEl) {
         return document.getElementsByClassName(id)[0];
 }
 
+String.prototype.escapeSpecialChars = function() {
+    return this.replace(/\\n/g, "\\n")
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f");
+};
+function forceCap(ele) {
+    var newVal = ele.value;
+    ele.value = newVal.charAt(0).toUpperCase() + newVal.slice(1);
+}
 function capitalizeTxt(txt) {
     if (txt != "undefined" && txt != null)
         return txt.charAt(0).toUpperCase() + txt.slice(1);
@@ -49,6 +63,10 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
 function ajaxRequestToMake(url, callback, data) {
     var callback = (typeof callback == 'function' ? callback : false),
         xhr = null;
@@ -434,7 +452,7 @@ function deleteModule(el, mType) {
             if (jsRes.response === "success") {
                 eleMade.parentNode.removeChild(eleMade);
             } else {
-                //addError("Could not be deleted");
+                errorMessage("Could not be deleted");
             }
         }, {
             metaid: molId,

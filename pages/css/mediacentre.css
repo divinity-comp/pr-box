@@ -11,6 +11,11 @@
 .hidden {
     display: none;
 }
+.project iframe {
+    height: calc(100% - 10px);
+    margin: 0;
+    border: 0;
+}
 .quanta {
       width: calc(17%);
     text-align: center;

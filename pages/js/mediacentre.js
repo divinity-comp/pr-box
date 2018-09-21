@@ -20,23 +20,20 @@ function openSubMed(num) {
         if(response != "failed") {
             idc("itemsList").innerHTML = response;
             if(num == 0) {
-                idc("itemsList").removeChild(idc("itemsList").getElementsByClassName("overlay")[0]);
             }
             if(num == 1) {
-                imageUpload();
             }
             else if(num == 2) {
                 videoInitial();
             }
             else if(num == 3) {
-                docUpload();
             }
             else if(num == 4) {
                 coverageInitial();
             }
         }
         else {
-            addError("Could note be loaded");
+            errorMessage("Could note be loaded");
         }
     }, "");
 }
@@ -251,10 +248,10 @@ function uploadVideosToServer() {
         function(response) {
         console.log(response);
         if(response.indexOf('success') > -1) {
-           // addSuccessMessage("Video Saved");
+           // successMessage("Video Saved");
         }
         else {
-          //  addError("Could not be saved");
+          //  errorMessage("Could not be saved");
         }
     }, {valjs:videoJSONVString,type:"video list"});
 }
@@ -356,10 +353,10 @@ function uploadcoverageToServer() {
         function(response) {
         console.log(response);
         if(response.indexOf('success') > -1) {
-            addSuccessMessage("coverage Saved");
+            successMessage("coverage Saved");
         }
         else {
-            addError("Could not be saved");
+            errorMessage("Could not be saved");
         }
     }, "valjs=" + coverageJSONVString + "&type=coverage list" );
 }

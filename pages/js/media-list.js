@@ -110,7 +110,7 @@ function genList() {
             }
         }
         if(!hasSelected) {
-            addError("No items to add to the list");
+            errorMessage("No items to add to the list");
         }
         else {
             
@@ -169,17 +169,18 @@ function genList() {
             }
         }
         var listMadeSt = JSON.stringify(listMade);
-        ajaxRequestToMake("data-calls/media-list/add-media-contacts.php",
+        ajaxRequestToMake(urlInit + "/app/" + appVersion + "/media-list/add-media-contacts",
             function(response) {
+            console.log(response);
                 if(response.indexOf('success') > -1) {
                     lastSearchId = JSON.parse(response)["listid"];
                     saveList("Remind Later");
                 }
                 else {
-                    addError("adding to list failed");
+                    errorMessage("adding to list failed");
                 }
 
-        }, "listname=" + idc("woopitchTitle").innerHTML + "&userstoadd=" + listMadeSt);
+        }, {listname:idc("woopitchTitle").innerHTML,userstoadd:listMadeSt});
     }
 }
 
@@ -216,21 +217,19 @@ function saveList(subtle) {
             listMade.mailing.push(jsonMl);
         }
         var listiMainId = idc("listiMainId");
-        var addProj = "";
-        if(listiMainId.innerHTML == "-2") {
-
-        }
-        else {
-            addProj = "&id=" +listiMainId.innerHTML;
+        var mediaJSend = {pd:projectDeats,vj:validJsonSend,list:listMadeSt,name:pressReleaseForm[0].value};
+    
+        if(listiMainId.innerHTML != "-2") {
+            mediaJSend.id = listiMainId.innerHTML;
         }
         var listMadeSt = JSON.stringify(listMade);
-        ajaxRequestToMake("data-calls/save-media-list.php",
+        ajaxRequestToMake(urlInit + "/app/" + appVersion + "/media-list/save-media-list.php",
             function(response) {
             console.log(response);
             if(response.indexOf('success') > -1) {
                 var newID = JSON.parse(response)["mediaid"];
                 if(lastSearchId != "") {
-                    ajaxRequestToMake("data-calls/add-general-meta.php",
+                    ajaxRequestToMake(urlInit + "/app/" + appVersion + "/update/add-general-meta.php",
                         function(responsea) {
                         console.log("add general meta" + responsea);
                             switch (subtle) {
@@ -238,13 +237,15 @@ function saveList(subtle) {
                                     console.log("media list saved");
                                 break; 
                                 case "Remind Later":
-                                  window.location.href = "main.php?p=0&n=dash&pop=media";
+                                    successMessage("Media list saved");
+                                    successMessage("Finding contacts");
+                                    loadMainDashboard();
                                 break; 
                                 default:
-                                    addSuccessMessage("Media List Saved");
+                                    successMessage("Media List Saved");
                                 break; 
                             }
-                    },"metatype=" + lastSearchId + "&metavalue=" + newID);
+                    },{metatype:lastSearchId,metavalue:newID});
                 }
                 else {
                     switch (subtle) {
@@ -252,7 +253,9 @@ function saveList(subtle) {
                             console.log("media list saved");
                         break; 
                         case "Remind Later":
-                            window.location.href = "main.php?p=0&n=dash&pop=media";
+                                    successMessage("Media list saved");
+                                    successMessage("Finding contacts");
+                                    loadMainDashboard();
                         break; 
                         default:
                             successMessage("Media List Saved");
@@ -268,7 +271,7 @@ function saveList(subtle) {
             else {
                 errorMessage("Media List not saved please try again - if failure repeats please contact support " + response);
             }
-        }, "pd=" + projectDeats + "&vj=" + validJsonSend + "&list=" + listMadeSt + "&name="  + pressReleaseForm[0].value + addProj );
+        }, mediaJSend );
     }
     else {
         if(myVar === false)
