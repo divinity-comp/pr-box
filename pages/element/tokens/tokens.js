@@ -1,31 +1,31 @@
-function supportTimeGet() {
-    var supportTime = idc("supportTime");
-    supportTime.style.opacity = "0";
-    ajaxRequestGet(urlInit + "/app/" + appVersion + "/data/support-data",
+function tokensLSet() {
+    var tokensL = idc("tokensLeft");
+    tokensL.style.opacity = "0";
+    ajaxRequestGet(urlInit + "/app/" + appVersion + "/data/tokens-data",
         function (response) {
             if (response.includes("success")) {
-                var supportJSON = JSON.parse(response);
-                idc("supportTime").getElementsByTagName("h3")[0].innerHTML = supportJSON["supporttime"];
+                var tokensLJSON = JSON.parse(response);
+                tokensL.getElementsByTagName("h2")[0].innerHTML = tokensLJSON["tokens"];
                 var tl = new TimelineMax();
-                tl.fromTo(supportTime, 0.4, {
+                tl.fromTo(tokensL, 0.4, {
                         opacity: 0
                     }, {
                         opacity: 1,
                         ease: Circ.easeOut
                     })
-                    .fromTo(supportTime.children[0], 0.4, {
+                    .fromTo(tokensL.children[0], 0.4, {
                         scale: 0
                     }, {
                         scale: 1,
                         ease: Circ.easeOut
                     })
-                    .fromTo(supportTime.children[0].children[0], 0.4, {
+                    .fromTo(tokensL.children[0].children[0], 0.4, {
                         scale: 0
                     }, {
                         scale: 1,
                         ease: Circ.easeOut
                     })
-                    .fromTo(supportTime.children[0].children[0].children, 0.4, {
+                    .fromTo(tokensL.children[0].children[0].children, 0.4, {
                         opacity: 0,
                         y: 20
                     }, {
@@ -33,8 +33,7 @@ function supportTimeGet() {
                         y: 0,
                         ease: Circ.easeOut
                     });
-
             }
         });
 }
-supportTimeGet();
+tokensLSet();

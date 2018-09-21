@@ -1,8 +1,5 @@
-#timeline {
-    font-size: 0.7em;
-    padding: 1em 0.5em;
-     width: 69%;
-}
+#timeline {}
+
 #main {
-    display:block;
+    display: block;
 }

@@ -1,4 +1,3 @@
-
 <div id="timeline">
     <div id="headerTime" class="headline">
         <div class="headerTimeLeft">
@@ -11,15 +10,15 @@
             <h3 onclick="timelineType(0)" active="true">Year</h3>
             <h3 onclick="timelineType(1)">Month</h3>
             <h3 onclick="timelineType(2)">Week</h3>
-        </div>  
+        </div>
         <div id="timelineSettings" style="display:none;">
             <i class="fa fa-cog" onclick="toggleSettings(idc('timelineSettings').children[1])" aria-hidden="true"></i>
             <div>
                 <button onclick="toggleSettings(this);toggleTitles(this)"><span>Show Titles</span></button>
             </div>
-        </div>           
+        </div>
     </div>
-    <div id="currentSelection" >
+    <div id="currentSelection">
         <div></div>
     </div>
     <div class="timelineContent">
@@ -29,7 +28,7 @@
             </div>
             <div id="activeInformation">
                 <h2></h2>
-                <button >Edit</button>
+                <button>Edit</button>
                 <button class="close" onclick="idc('activeInformation').style.display = 'none'">X</button>
                 <div class="arrow"></div>
             </div>
@@ -46,39 +45,44 @@
         </h2>
     </header>
     <div class="eventActions">
-        
+
     </div>
 </div>
 <style>
     #timelineSettings {
-        font-size:1.5em;
+        font-size: 1.5em;
         position: relative;
     }
+
     #timelineSettings div button {
         width: 100%;
         text-align: center;
         vertical-align: middle;
     }
+
     #timelineSettings div button:before {
-        content:'';
-        width:15px;
-        height:15px;
-        box-shadow: inset 0px 0px 0px 2px #000,inset 0px 0px 0px 4px #fff,inset 0px 0px 0px 15px #fff;
+        content: '';
+        width: 15px;
+        height: 15px;
+        box-shadow: inset 0px 0px 0px 2px #000, inset 0px 0px 0px 4px #fff, inset 0px 0px 0px 15px #fff;
         border-radius: 4px;
-        display:inline-block;
+        display: inline-block;
         vertical-align: middle;
     }
+
     #timelineSettings div button[active="true"]:before {
-        box-shadow: inset 0px 0px 0px 2px #000,inset 0px 0px 0px 4px #fff,inset 0px 0px 0px 15px #000;
+        box-shadow: inset 0px 0px 0px 2px #000, inset 0px 0px 0px 4px #fff, inset 0px 0px 0px 15px #000;
     }
+
     #timelineSettings div span {
-        margin-left:10px;
+        margin-left: 10px;
         vertical-align: middle;
     }
+
     #timelineSettings div {
         z-index: 9999;
         display: none;
-         position: absolute;
+        position: absolute;
         top: 65%;
         right: 0;
         width: 180px;
@@ -87,11 +91,13 @@
         border-radius: 7px;
         padding: 5px 10px;
     }
+
     #timelineSettings div[active="true"] {
         display: block;
     }
+
     #activeInformation {
-        display: none;   
+        display: none;
         width: 80%;
         background: #fff;
         position: absolute;
@@ -101,6 +107,7 @@
         border-radius: 1em;
         box-shadow: 0px 0px 3px 1px #ababab;
     }
+
     #activeInformation div.arrow {
         border-top: 10px solid #2f2f2f;
         border-right: 10px solid transparent;
@@ -112,12 +119,14 @@
         width: 1px;
         margin: auto;
     }
+
     #activeInformation h2 {
         color: #000;
         padding: 1em 3em 1em 1em;
         margin: 0;
         font-size: 1.1em;
     }
+
     #activeInformation button {
         position: absolute;
         top: 0;
@@ -137,6 +146,7 @@
         z-index: 1;
         font-size: 1em;
     }
+
     #activeInformation button.close {
         left: -1em;
         width: 2em;
@@ -148,19 +158,22 @@
         background: #c91e50;
         box-shadow: 0px 0px 0px 2px #c91e50;
     }
-    #headerTime {    
+
+    #headerTime {
         display: flex;
         width: 100%;
         justify-content: space-evenly;
     }
+
     #timeline {
         width: calc(100%);
         opacity: 0;
-        padding:2em;
+        padding: 2em;
         overflow: hidden;
         float: left;
         z-index: 1;
     }
+
     .headerTimeLeft {
         float: left;
         width: 40%;
@@ -168,17 +181,20 @@
         position: relative;
         margin-right: auto;
     }
+
     .headerTimeLeft i {
         position: absolute;
         top: 0.1em;
         pointer-events: none;
         right: 0.5em;
     }
+
     #timelineType {
         float: right;
         display: flex;
         width: 270px;
     }
+
     #timelineType h3 {
         float: left;
         display: inline-block;
@@ -192,62 +208,84 @@
         -webkit-transition: all 0.4s;
         transition: all 0.4s;
     }
+
     .timelineContent {
         position: relative;
         z-index: 9;
     }
+
     #projectListSelect {
         font-size: 1em;
         width: 100%;
         padding-right: 2em;
         border: 0;
     }
-    #timelineType h3:hover, #timelineType h3[active=true] {
+
+    #timelineType h3:hover,
+    #timelineType h3[active=true] {
         color: #101010;
         border-bottom: 4px solid #222973;
     }
+
     #currentSelection {
         position: relative;
         overflow: hidden;
-        margin-top:1em;
+        margin-top: 1em;
     }
-    #currentSelection > div,#xAxis {
+
+    #currentSelection>div,
+    #xAxis {
         width: 100%;
         height: 5em;
         position: relative;
         overflow: hidden;
         padding: 1.5em 0;
     }
-    #currentSelection > div:before,#currentSelection > div:after,#xAxis:before,#xAxis:after {
+
+    #currentSelection>div:before,
+    #currentSelection>div:after,
+    #xAxis:before,
+    #xAxis:after {
         content: '';
         position: absolute;
         width: 50%;
         left: 0;
         top: 0;
         height: 100%;
-        z-index:9;
-        background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-        background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-        background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+        z-index: 9;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
     }
-    #xAxis:before,#xAxis:after {
-        width:25%;
+
+    #xAxis:before,
+    #xAxis:after {
+        width: 25%;
     }
+
     #xAxis:before {
-        width:5%;
+        width: 5%;
         opacity: 0.5;
     }
-    #currentSelection > div:after ,#xAxis:after {
+
+    #currentSelection>div:after,
+    #xAxis:after {
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
-        background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-        right:0;
-        left:initial;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1);
+        /* IE6-9 */
+        right: 0;
+        left: initial;
     }
-    #currentSelection > div div,#xAxis div {
+
+    #currentSelection>div div,
+    #xAxis div {
         width: 50%;
         text-align: center;
         font-size: 1.6em;
@@ -256,11 +294,12 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding:0 2px;
+        padding: 0 2px;
         pointer-events: none;
     }
+
     #currentSelection:after {
-        content:attr(extra);
+        content: attr(extra);
         position: absolute;
         top: 0;
         left: 0;
@@ -270,14 +309,16 @@
         font-size: 1.5em;
         line-height: 1em;
     }
+
     #xAxis div {
-        font-size:1.2em;
+        font-size: 1.2em;
         line-height: 2em;
         padding: 0 2px 1em;
         box-shadow: -1px 0px 0px 0px #d2d2d2, 1px 0px 0px 0px #d2d2d2;
     }
+
     #xAxis div:after {
-        content:attr(data);
+        content: attr(data);
         position: absolute;
         bottom: 0%;
         left: 0;
@@ -287,22 +328,26 @@
         font-size: 1em;
         line-height: 1em;
     }
+
     .overview {
         position: relative;
         overflow: auto;
         overflow-x: hidden;
         height: 100%;
     }
+
     .overview:after {
-        content:'';
+        content: '';
     }
-    .overview > div {
+
+    .overview>div {
         margin-top: 1.5em;
         height: 1.8em;
         position: relative;
         margin-right: 0;
     }
-    .overview > div h2 {
+
+    .overview>div h2 {
         display: none;
         position: absolute;
         bottom: 100%;
@@ -314,27 +359,33 @@
         transform: translateX(-50%);
         left: 50%;
     }
-    .overview[titles="true"] > div h2 {
+
+    .overview[titles="true"]>div h2 {
         display: block;
     }
-    .overview > div .hidden {
+
+    .overview>div .hidden {
         display: none;
     }
+
     .overview .actions {
-        height:100%;
+        height: 100%;
         pointer-events: none;
     }
+
     .overview .actions div {
-        height:100%;
+        height: 100%;
         display: inline-block;
         position: absolute;
         box-shadow: 0px 0px 0px 1px #fff;
     }
+
     .viewport {
         width: 100%;
         position: relative;
         height: 20em;
     }
+
     #editTimeline h2 {
         margin: 0;
         float: left;
@@ -342,22 +393,26 @@
         border-bottom: 2px solid #e2e2e2;
         padding: 0.5em;
     }
+
     #editTimeline h2:nth-child(2) {
-        float:right;
+        float: right;
         border: 0;
         text-align: right;
     }
+
     #editTimeline header {
-      overflow: hidden;
+        overflow: hidden;
     }
+
     .eventActions {
         overflow: auto;
         padding: 2em 0;
         position: relative;
         padding-bottom: 15em;
     }
-    .eventActions >  div:before {
-        content: '';   
+
+    .eventActions>div:before {
+        content: '';
         position: absolute;
         left: 0;
         right: 0;
@@ -367,7 +422,8 @@
         margin: auto;
         top: 0;
     }
-    .eventActions > button {
+
+    .eventActions>button {
         margin: 1em auto;
         width: 2em;
         height: 2em;
@@ -377,42 +433,49 @@
         display: none;
         z-index: 99999;
     }
-    .eventActions > div {
-          width: 100%;
+
+    .eventActions>div {
+        width: 100%;
         padding: 0.5em 0;
         position: relative;
-    display: inline-block;
+        display: inline-block;
     }
-    .eventActions > div > div {
-        padding:1em;
-        width:50%;
-        float:left;
+
+    .eventActions>div>div {
+        padding: 1em;
+        width: 50%;
+        float: left;
         font-weight: bold;
         font-size: 1.5em;
         position: relative;
     }
-    .eventActions > div > div:nth-child(1) {
+
+    .eventActions>div>div:nth-child(1) {
         text-align: right;
     }
-    .eventActions > div > div:before {
-        content:'';
+
+    .eventActions>div>div:before {
+        content: '';
         position: absolute;
         width: 0.5em;
         background: #dadada;
-        height:2px;
-        top:0;
-        bottom:0;
-        margin:auto;
-        right:0;
+        height: 2px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 0;
     }
-    .eventActions > div > div:nth-child(2):before {
-        left:0;
-        right:initial;
+
+    .eventActions>div>div:nth-child(2):before {
+        left: 0;
+        right: initial;
     }
-    .eventActions > div > div span {
+
+    .eventActions>div>div span {
         position: relative;
     }
-    .eventActions > div > div button:nth-child(2) {
+
+    .eventActions>div>div button:nth-child(2) {
         position: absolute;
         height: 3em;
         right: 33%;
@@ -425,7 +488,8 @@
         margin: auto 1em;
         box-shadow: 0px 0px 0px 2px #2d2d2d;
     }
-    .eventActions > div > div button.remove {
+
+    .eventActions>div>div button.remove {
         position: absolute;
         height: 100%;
         left: 0;
@@ -439,115 +503,148 @@
         font-weight: bold;
         font-size: 0.8em;
     }
-    .eventActions > div > div button:nth-child(2).complete {
+
+    .eventActions>div>div button:nth-child(2).complete {
         background: #52c25b;
         color: #fff;
         box-shadow: 0px 0px 0px 2px #359e22;
     }
-    
+
     @media all and (min-width: 300px) {
         #timeline {
             font-size: 0.7em;
         }
+
         #headerTime {
-            display:block;
+            display: block;
         }
+
         .headerTimeLeft {
-            width:100%;
             padding: 0.5em 0.5em 1em;
         }
+
         #timelineType {
-            width:100%;
+            width: 60%;
+            font-size: 0.9em;
         }
+
         #timelineType h3 {
-            width:100%;
+            width: 100%;
         }
-        #currentSelection,.timelineContent {
-            width:100%;
-            float:left;
+
+        #currentSelection,
+        .timelineContent {
+            width: 100%;
+            float: left;
         }
     }
+
+
     @media all and (min-width: 600px) {
-        
-        #timelineType h3 { 
-            font-size:1.4em;
+
+        #timelineType h3 {
+            font-size: 1.4em;
         }
+
         #timeline {
             font-size: 0.85em;
         }
+
         #headerTime {
-            display:flex;
+            display: flex;
         }
+
         .headerTimeLeft {
-            width:40%;
+            width: 40%;
             padding: 0;
+            margin-top: 0.6em;
         }
+
         #timelineType {
-            width:270px;
+            width: 270px;
         }
+
         #timelineType h3 {
-            width:initial;
+            width: initial;
         }
-        #currentSelection,.timelineContent {
-            width:initial;
-            float:none;
+
+        #currentSelection,
+        .timelineContent {
+            width: initial;
+            float: none;
         }
+
     }
+
     @media all and (min-width: 768px) {
         #timeline {
             font-size: 1em;
         }
     }
-    
-@media all and (orientation: portrait) and (max-width: 500px) {
-    #projectDeats input:first-child {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 12px;
+
+    @media all and (orientation: portrait) and (max-width: 500px) {
+        #projectDeats input:first-child {
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 12px;
+        }
     }
-}
-@media all and (orientation: portrait) {
-    .eventActions {
-     font-size: 0.7em;
+
+    @media all and (orientation: portrait) {
+        .eventActions {
+            font-size: 0.7em;
+        }
+
+        .eventActions>div>div {
+            width: 100%;
+        }
+
+        .eventActions>div>div button.remove {
+            font-size: 1.3em;
+        }
+
+        .eventActions>div>div:before {
+            display: none;
+        }
+
+        .eventActions>div>div:nth-child(2) {
+            box-shadow: 0px 0px 0px 2px #dadada;
+            text-align: center;
+            background: #fff;
+            font-size: 1.3em;
+        }
+
+        .eventActions>div>div button:nth-child(2) {
+            margin: initial;
+            box-shadow: 0px 0px 0px 2px #2d2d2d;
+            left: calc(100% - 3.2em);
+            right: initial;
+            top: 99%;
+        }
+
+        .eventActions>div>div button.remove {
+            z-index: 99;
+            top: 168%;
+        }
+
+        .eventActions>div>div:nth-child(1) {
+            text-align: center;
+            z-index: 999;
+        }
+
+        .eventActions>div>div span {
+            transform: translateY(15px);
+            display: inline-block;
+            z-index: 99;
+            background: #fff;
+            box-shadow: 0px 0px 0px 2px #dadada;
+            padding: 0.5em;
+        }
     }
-    .eventActions > div > div {
-        width:100%;
+
+    .hidden {
+        display: none !important;
     }
-    .eventActions > div > div button.remove {
-        font-size: 1.3em;
-    }
-    .eventActions > div > div:before {
-        display: none;
-    }
-    .eventActions > div > div:nth-child(2) {
-        box-shadow: 0px 0px 0px 2px #dadada;
-        text-align: center;
-        background: #fff;
-        font-size: 1.3em;
-    }
-    .eventActions > div > div button:nth-child(2) {
-        margin: initial;
-        box-shadow: 0px 0px 0px 2px #2d2d2d;
-        left: calc(100% - 3.2em);
-        right: initial;
-        top: 99%;
-    }
-    .eventActions > div > div button.remove {
-        z-index: 99;
-        top: 168%;
-    }
-    .eventActions > div > div:nth-child(1) {
-        text-align: center;
-        z-index: 999;
-    }
-    .eventActions > div > div span {
-        transform: translateY(15px);
-        display: inline-block;
-        z-index: 99;
-        background: #fff;
-        box-shadow: 0px 0px 0px 2px #dadada;
-        padding: 0.5em;
-    }
-}
+
 </style>

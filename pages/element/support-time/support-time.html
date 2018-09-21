@@ -1,46 +1,26 @@
-<div id="supportTime" class="mButton" >
+<div id="supportTime" class="mButton">
     <div class="circle">
-        <div class="innercircle">
-            <h3></h3>
-            <p>mins</p>
-        </div>
+        <h3></h3>
+        <p>mins</p>
     </div>
 </div>
+
 <style>
     #supportTime {
-        margin-top:2em;
+        background: #48c2c5;
+        background: -moz-linear-gradient(left, #48c2c5 0%, #1c1f4d 100%);
+        background: -webkit-linear-gradient(left, #48c2c5 0%, #1c1f4d 100%);
+        background: linear-gradient(to right, #48c2c5 0%, #1c1f4d 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#48c2c5', endColorstr='#1c1f4d', GradientType=1);
     }
-.circle {
-    width: 25vw;
-    height: 25vw;
-    background: #48c2c5;
-    background: -moz-linear-gradient(left, #48c2c5 0%, #1c1f4d 100%);
-    background: -webkit-linear-gradient(left, #48c2c5 0%,#1c1f4d 100%);
-    background: linear-gradient(to right, #48c2c5 0%,#1c1f4d 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48c2c5', endColorstr='#1c1f4d',GradientType=1 );
-    border-radius: 20em;
-    position: relative;
-    margin: 0 auto;
-}
-    .innercircle {
-        width: 22vw;
-        height: 22vw;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        background-color: #fff;
-        border-radius: 17em;
-        overflow: hidden;
-    }
-    .innercircle p {
+
+    .circle p {
         text-align: center;
         margin: 0;
         font-size: 3.5vw;
     }
-    .innercircle h3 {
+
+    .circle h3 {
         text-align: center;
         font-size: 6vw;
         margin-bottom: 0;
@@ -48,4 +28,5 @@
         margin-top: 1em;
         line-height: 1em;
     }
+
 </style>
