@@ -927,7 +927,6 @@ textarea {
     margin: auto;
     clear: both;
     padding-bottom: 2em;
-    pointer-events: none;
 }
 
 .uploadIcons {
