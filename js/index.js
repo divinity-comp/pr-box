@@ -18,22 +18,31 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         devicePlatform = device.platform;
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
         checkLogin();
+        camearaOptions = {
+            quality: 100,
+            destinationType: destinationType.FILE_URI,
+            sourceType: pictureSource.PHOTOLIBRARY
+        };
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        
+    receivedEvent: function (id) {
+
     }
 };
+var pictureSource;
+var destinationType;
 var test = true;
 var devicePlatform;

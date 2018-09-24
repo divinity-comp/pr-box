@@ -78,9 +78,9 @@ function loginInit() {
             ease: Circ.easeOut
         });
 }
-/* restUserDetails
+/* restUserDetails*/
 delete_cookie("email");
-delete_cookie("pass"); */
+delete_cookie("pass");
 
 function loginOrPasswordReset(ev) {
     idc("error").className = "";
@@ -123,8 +123,8 @@ function loginOrPasswordReset(ev) {
                         checkLive = setInterval(function () {
                             checkIfLive();
                         }, 10000);
-                        getMainDashboard();
                         setCookie("stringUserData", response);
+                        getMainDashboard();
                     } else {
                         idc("error").innerHTML = jsRes.response;
                     }
@@ -488,14 +488,14 @@ function getMainDashboard() {
 function loadMainDashboard() {
     idc("main").innerHTML = "";
     idc("main").className = "dash";
-    
-    loadElement("timeline",function() {
-        var tmLoaded = setInterval(function(){  
-            if(idc("timeline").getAttribute("loaded")) {
 
-                    loadTimeline();
+    loadElement("timeline", function () {
+        var tmLoaded = setInterval(function () {
+            if (idc("timeline").getAttribute("loaded")) {
+
+                loadTimeline();
                 clearInterval(tmLoaded);
-            }                      
+            }
         }, 400);
     });
     loadElement("tasks");
@@ -533,62 +533,62 @@ function setDashboardDimensions() {
     panelLinks.style.height = "calc(100% - " + elDimensions(clientDeats, "All").y + "px)";
     idc("main").style.height = "calc(100% - " + elDimensions(clientDeats, "All").y + "px)";
 }
-addResizeEvent(setDashboardDimensions);
-var camearaOptions = {
-    quality: 100,
-    destinationType: navigator.camera.DestinationType.FILE_URI,
-    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-}
+var camearaOptions;
+
 function getImage() {
-    navigator.camera.getPicture(uploadPhoto,onError, camearaOptions);
+    navigator.camera.getPicture(uploadPhoto, onError, camearaOptions);
 }
+
 function getProfile() {
-    navigator.camera.getPicture(uploadProfPhoto,onError, camearaOptions);
+    navigator.camera.getPicture(uploadProfPhoto, onError, camearaOptions);
 }
 
-        function uploadProfPhoto(imageURI) {
-            var options = new FileUploadOptions();
-            options.fileKey = "file";
-            options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-            options.mimeType = "image/jpeg";
+function uploadProfPhoto(imageURI) {
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
 
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
-            
-            options.params = params;
-            options.chunkedMode = false;
+    var params = new Object();
+    params.value1 = "test";
+    params.value2 = "param";
 
-            var ft = new FileTransfer();
-            ft.upload(imageURI, urlInit + "/app/" + appVersion + "/update/upload-prof-image.php",
-            function (result) {
-                successMessage("image uploaded");
-            },
-            function (error) {
-                errorMessage("image failed");
-            }, options);
-        }
-        function onError(err){ errorMessage(err); }
+    options.params = params;
+    options.chunkedMode = false;
 
-        function uploadPhoto(imageURI) {
-            var options = new FileUploadOptions();
-            options.fileKey = "file";
-            options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-            options.mimeType = "image/jpeg";
+    var ft = new FileTransfer();
+    ft.upload(imageURI, urlInit + "/app/" + appVersion + "/update/upload-prof-image.php",
+        function (result) {
+            successMessage("image uploaded");
+        },
+        function (error) {
+            errorMessage("image failed");
+        }, options);
+}
 
-            var params = new Object();
-            params.value1 = "test";
-            params.value2 = "param";
-            
-            options.params = params;
-            options.chunkedMode = false;
+function onError(err) {
+    errorMessage(err);
+}
 
-            var ft = new FileTransfer();
-            ft.upload(imageURI, urlInit + "/app/" + appVersion + "/update/upload-image.php",
-            function (result) {
-                successMessage("image uploaded");
-            },
-            function (error) {
-                errorMessage("image failed");
-            }, options);
-        }
+function uploadPhoto(imageURI) {
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
+
+    var params = new Object();
+    params.value1 = "test";
+    params.value2 = "param";
+
+    options.params = params;
+    options.chunkedMode = false;
+
+    var ft = new FileTransfer();
+    ft.upload(imageURI, urlInit + "/app/" + appVersion + "/update/upload-image.php",
+        function (result) {
+            successMessage("image uploaded");
+        },
+        function (error) {
+            errorMessage("image failed");
+        }, options);
+}
