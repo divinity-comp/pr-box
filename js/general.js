@@ -38,21 +38,22 @@ function gbc(id, parentEl) {
     else
         return document.getElementsByClassName(id)[0];
 }
-
-String.prototype.escapeSpecialChars = function() {
+String.prototype.escapeSpecialChars = function () {
     return this.replace(/\\n/g, "\\n")
-               .replace(/\\'/g, "\\'")
-               .replace(/\\"/g, '\\"')
-               .replace(/\\&/g, "\\&")
-               .replace(/\\r/g, "\\r")
-               .replace(/\\t/g, "\\t")
-               .replace(/\\b/g, "\\b")
-               .replace(/\\f/g, "\\f");
+        .replace(/\\'/g, "\\'")
+        .replace(/\\"/g, '\\"')
+        .replace(/\\&/g, "\\&")
+        .replace(/\\r/g, "\\r")
+        .replace(/\\t/g, "\\t")
+        .replace(/\\b/g, "\\b")
+        .replace(/\\f/g, "\\f");
 };
+
 function forceCap(ele) {
     var newVal = ele.value;
     ele.value = newVal.charAt(0).toUpperCase() + newVal.slice(1);
 }
+
 function capitalizeTxt(txt) {
     if (txt != "undefined" && txt != null)
         return txt.charAt(0).toUpperCase() + txt.slice(1);
@@ -63,10 +64,11 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.split(search).join(replacement);
 };
+
 function ajaxRequestToMake(url, callback, data) {
     var callback = (typeof callback == 'function' ? callback : false),
         xhr = null;
@@ -334,7 +336,14 @@ function loading(active) {
             });
     }
 }
-
+function linkUpdate(ele) {
+    var navMenu = idc("navMenu").getElementsByTagName("li");
+    
+    for(i = 0;i < navMenu.length;i++) {
+        navMenu[i].className = "";
+    }
+    ele.className = "active";
+}
 function loadPanel(ele) {
     toggleMobile(idc("mobileMenu"));
     loading(1);
@@ -450,6 +459,25 @@ function deleteModule(el, mType) {
         function (response) {
             var jsRes = JSON.parse(response);
             if (jsRes.response === "success") {
+                eleMade.parentNode.removeChild(eleMade);
+            } else {
+                errorMessage("Could not be deleted");
+            }
+        }, {
+            metaid: molId,
+            metatype: mType
+        });
+}
+
+function deleteProject(el, mType) {
+    var eleMade = el.parentNode;
+    var molId = eleMade.children[0].id;
+    ajaxRequestToMake(urlInit + "/app/" + appVersion + "/update/delete-project",
+        function (response) {
+            console.log(molId + response + mType);
+            var jsRes = JSON.parse(response);
+            if (jsRes.response === "success") {
+                successMessage("Project removed");
                 eleMade.parentNode.removeChild(eleMade);
             } else {
                 errorMessage("Could not be deleted");

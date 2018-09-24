@@ -65,7 +65,7 @@ function rePositionEditControls() {
     var editControls = idc("editControls");
 
     TweenMax.set(editControls, {
-        bottom: getHeight() - findPos(selectedElement).y
+        bottom: getHeight() - findPos(selectedElement).y - selectedElement.offsetHeight - editControls.offsetHeight
     });
 }
 

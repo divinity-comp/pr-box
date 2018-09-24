@@ -78,9 +78,9 @@ function loginInit() {
             ease: Circ.easeOut
         });
 }
-/* restUserDetails*/
+/* restUserDetails
 delete_cookie("email");
-delete_cookie("pass");
+delete_cookie("pass");*/
 
 function loginOrPasswordReset(ev) {
     idc("error").className = "";
@@ -472,7 +472,6 @@ function getMainDashboard() {
                     var navMenu = idc("navMenu");
                     navMenu.innerHTML = response;
                     navMenu.children[0].className = "alignFlex";
-                    navMenu.getElementsByTagName("li")[0].className = "active";
                     setDashboardDimensions();
                     // test load page
                     loadMainDashboard();
@@ -540,11 +539,11 @@ function setDashboardDimensions() {
 var camearaOptions;
 
 function getImage() {
-    navigator.camera.getPicture(uploadPhoto, onError, camearaOptions);
+    navigator.camera.getPicture(uploadPhoto, onErrorUpload, camearaOptions);
 }
 
 function getProfile() {
-    navigator.camera.getPicture(uploadProfPhoto, onError, camearaOptions);
+    navigator.camera.getPicture(uploadProfPhoto, onErrorUpload, camearaOptions);
 }
 
 function uploadProfPhoto(imageURI) {
@@ -570,7 +569,7 @@ function uploadProfPhoto(imageURI) {
         }, options);
 }
 
-function onError(err) {
+function onErrorUpload(err) {
     errorMessage(err);
 }
 

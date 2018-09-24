@@ -103,9 +103,10 @@
         position: absolute;
         top: -10px;
         left: 0px;
-        max-width: 20em;
-        border-radius: 1em;
-        box-shadow: 0px 0px 3px 1px #ababab;
+        font-size: 1.3em;
+        max-width: 16em;
+        border-radius: 0;
+        box-shadow: 0px 0px 3px 0px #ababab;
     }
 
     #activeInformation div.arrow {
@@ -122,22 +123,21 @@
 
     #activeInformation h2 {
         color: #000;
-        padding: 1em 3em 1em 1em;
+        padding: 1em 1em 1em 1em;
         margin: 0;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     #activeInformation button {
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: calc(100% - 2em);
+        bottom: 100%;
+        right: 0;
         height: 100%;
         background: #fff;
-        border-radius: 5em;
-        box-shadow: 0px 0px 0px 3px #222973;
-        width: 4em;
-        height: 4em;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 0px 1px #222973, inset 0px 0px 0px 1px #222973;
+        padding: 0 0.75em;
+        height: 100%;
         margin: auto;
         color: #000;
         font-weight: bold;
@@ -145,18 +145,28 @@
         text-transform: uppercase;
         z-index: 1;
         font-size: 1em;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 50%;
     }
 
     #activeInformation button.close {
-        left: -1em;
-        width: 2em;
-        height: 2em;
-        top: -1em;
-        border-radius: 0;
-        bottom: initial;
-        color: #ffff;
+        height: 100%;
+        font-size: 1.5em;
+        left: initial;
+        width: 50%;
+        border-radius: 0.5em;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        left: 0;
+        right: initial;
+        margin: auto;
+        bottom: 100%;
+        color: #fff;
         background: #c91e50;
-        box-shadow: 0px 0px 0px 2px #c91e50;
+        box-shadow: inset 0px 0px 0px 2px #c91e50;
     }
 
     #headerTime {
@@ -442,7 +452,7 @@
     }
 
     .eventActions>div>div {
-        padding: 1em;
+        padding: 1em 12%;
         width: 50%;
         float: left;
         font-weight: bold;
