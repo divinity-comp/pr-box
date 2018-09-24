@@ -489,6 +489,9 @@ function loadMainDashboard() {
     idc("main").innerHTML = "";
     idc("main").className = "dash";
 
+    toggleMobile(idc("mobileMenu"));
+    /*
+    
     loadElement("timeline", function () {
         var tmLoaded = setInterval(function () {
             if (idc("timeline").getAttribute("loaded")) {
@@ -524,6 +527,7 @@ function loadMainDashboard() {
             loadExternalElement("recent-news");
         }, 1000);
     }, 500);
+    */
 }
 
 function setDashboardDimensions() {

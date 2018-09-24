@@ -3,30 +3,35 @@
     border-bottom: 1px solid #969595;
     overflow: hidden;
 }
+
 .dropdown {
     position: relative;
     float: left;
 }
+
 #projectListSelect {
     float: left;
-     padding: 10px 1.5em 10px 10px;
+    padding: 10px 1.5em 10px 10px;
     border: 0;
     color: #4f4f4f;
     margin-top: 1em;
     border: 0;
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     font-size: 1.3em;
-    background:transparent;
+    background: transparent;
 }
+
 #titlePress #projectListSelect {
     margin-left: 15px;
 }
+
 #pressContainer {
     width: 100%;
     margin: 0;
     padding: 2em;
     height: 100%;
 }
+
 #pressRelease {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -39,9 +44,11 @@
     -ms-flex-align: start;
     align-items: flex-start;
 }
+
 #pressRelease > div {
-    width:100%;
+    width: 100%;
 }
+
 .rightTitle button {
     font-size: 1em;
     padding: 12px 1em;
@@ -50,20 +57,26 @@
     margin-left: 1em;
     border: 0;
 }
+
 #titlePress {
-     width: 100%;
+    width: 100%;
 }
+
 #titlePress button {
     color: #222973;
     border-radius: 6px;
 }
+
 #titlePress button.redButton {
     background: #222973;
     color: #fff;
 }
-.lightblue, #titlePress button.lightblue {
+
+.lightblue,
+#titlePress button.lightblue {
     color: #45c2c5;
 }
+
 .dropdown i {
     font-size: 1.2em !important;
     position: absolute;
@@ -78,81 +91,116 @@
     .rightTitle button {
         display: none;
     }
+
     #titlePress .dropdown {
         display: none;
     }
+
     #titlePress button.redButton {
         display: block;
         margin: 0;
         width: 100%;
         font-size: 1.4em;
     }
+
     #titlePress {
         padding-top: 2em;
     }
 }
+
 @media all and (orientation: portrait) and (min-width: 600px) {
     .rightTitle button {
-      display: inline-block;
+        display: inline-block;
     }
+
     #titlePress .dropdown {
         display: inline-block;
     }
+
     #titlePress button.redButton {
-        margin-left:1em;
-        font-size:initial;
-        width:initial;
+        margin-left: 1em;
+        font-size: initial;
+        width: initial;
     }
+
     .rightTitle {
-        float:right;
-        margin:1.25em;
+        float: right;
+        margin: 1.25em;
     }
+
     #titlePress {
         padding-top: 0;
     }
 }
+
 @media all and (orientation: landscape) {
     .rightTitle {
         float: right;
         margin: 1.25em;
     }
 }
+
 /*------------------------------------*\
     Elements
 \*------------------------------------*/
 #pressRelease {
-  font-size: 16px;
+    font-size: 16px;
 }
-.title-field:empty:after,.text-field:empty:before {
-    content:'Element is empty';
+
+.title-field:empty:after,
+.text-field:empty:before {
+    content: 'Element is empty';
 }
-.title-field[placeholder]:empty:before,.text-field[placeholder]:empty:before {
-    content:attr(placeholder);
+
+.title-field[placeholder]:empty:before,
+.text-field[placeholder]:empty:before {
+    content: attr(placeholder);
 }
+
 #pressRelease > * {
     position: relative;
 }
+
 #pressRelease > *[selected] {
-    
-    -webkit-animation: pulseShadow 0.5s; 
-    animation: pulseShadow 0.5s ;
+
+    -webkit-animation: pulseShadow 0.5s;
+    animation: pulseShadow 0.5s;
 }
+
 @-webkit-keyframes pulseShadow {
-  0% { background:transparent; }
-  50% { background:rgba(255,120,120,0.45); }
-  100% { background:transparent; }
+    0% {
+        background: transparent;
+    }
+
+    50% {
+        background: rgba(255, 120, 120, 0.45);
+    }
+
+    100% {
+        background: transparent;
+    }
 }
+
 @keyframes pulseShadow {
-  0% { background:transparent; }
-  50% { background:rgba(255,120,120,0.45); }
-  100% { background:transparent; }
+    0% {
+        background: transparent;
+    }
+
+    50% {
+        background: rgba(255, 120, 120, 0.45);
+    }
+
+    100% {
+        background: transparent;
+    }
 }
+
 #pressRelease[mode="element"] *:after {
-      content: attr(ElementName);
+    content: attr(ElementName);
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.7);
     width: 100%;
     height: 100%;
     display: -webkit-box;
@@ -165,15 +213,18 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 3px 0; 
+    padding: 3px 0;
     border: 2px dashed #0000008a;
     color: #000000cc;
     font-weight: bold;
 }
+
 /* default text settings */
-.title-field,.text-field {
-      margin: 1em 0;
+.title-field,
+.text-field {
+    margin: 1em 0;
 }
+
 .title-field {
     font-size: 28px;
     font-weight: 700;
@@ -182,35 +233,44 @@
 
 /* Element Sizes */
 .full-width {
-    width:100%;
+    width: 100%;
 }
+
 /*------------------------------------*\
     Controls
 \*------------------------------------*/
 #topEdit {
     max-width: 450px;
-    margin:0 auto;
+    margin: 0 auto;
 }
-#secondRow{
-    width:100%;
-     border-top: 2px solid #d6d6d6;
+
+#secondRow {
+    width: 100%;
+    border-top: 2px solid #d6d6d6;
     border-bottom: 2px solid #d6d6d6;
     overflow: hidden;
-    background:rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
 }
+
 #secondRow nav {
-    float:left;
-    background:#fff;
+    float: left;
+    background: #fff;
 }
-#textControls,#imageControls {
-    float:right;
+
+#textControls,
+#imageControls {
+    float: right;
 }
-#textControls[vis="true"],#imageControls[vis="true"] {
+
+#textControls[vis="true"],
+#imageControls[vis="true"] {
     display: block;
 }
+
 #imageControls {
-     margin: 0.5em 0;
+    margin: 0.5em 0;
 }
+
 #imageControls button {
     color: #2f337d;
     border-radius: 6px;
@@ -219,25 +279,29 @@
     border: 2px solid;
     margin: 0;
 }
+
 .dualButton {
     width: 100%;
     overflow: hidden;
     padding: 5px 0 10px 0;
 }
+
 .dualButton button {
     width: 50%;
     -webkit-box-shadow: inset 0px 0px 0px 1px #969595;
     box-shadow: inset 0px 0px 0px 1px #969595;
     padding: 8px;
     float: left;
-    background:#fff;
+    background: #fff;
 }
-.dualButton button.active {    
-    -webkit-box-shadow: 0px 0px 0px 1px #222973;    
+
+.dualButton button.active {
+    -webkit-box-shadow: 0px 0px 0px 1px #222973;
     box-shadow: 0px 0px 0px 1px #222973;
     background: #222973;
     color: #fff;
 }
+
 .buttonGroup {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -253,27 +317,30 @@
     -ms-flex-align: start;
     -webkit-box-align: start;
     align-items: flex-start;
-    margin:0;
+    margin: 0;
     padding: 0;
     border: 2px solid #d6d6d6;
-    border-bottom:0;
-    background:#fff;
+    border-bottom: 0;
+    background: #fff;
 }
+
 #secondRow .buttonGroup {
-    border:0;
+    border: 0;
     margin: 0 0 0 0.5em;
 }
 
 #secondRow #width {
-    margin-top:0.5em;
+    margin-top: 0.5em;
 }
+
 .buttonGroup button {
     padding: 0.8em 1.2em;
     -webkit-box-shadow: 0px 0px 0px 1px #b3b3b3;
-    box-shadow: 0px 0px 0px 1px #b3b3b3;   
+    box-shadow: 0px 0px 0px 1px #b3b3b3;
     margin: 0.5em 2px;
-     border-radius: 3px;
+    border-radius: 3px;
 }
+
 #deviceView {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -289,15 +356,18 @@
     -ms-flex-align: start;
     align-items: flex-start;
 }
+
 #deviceView button {
     width: 33.3%;
     height: 2.5em;
     font-size: 1.5em;
 }
+
 #deviceView button i {
-      vertical-align: middle;
+    vertical-align: middle;
 }
-#deviceView button.active {    
+
+#deviceView button.active {
     background: #191919;
     color: #fff;
 }
@@ -305,18 +375,19 @@
 
 /* element controls */
 #elementControls {
-     width: 75%;
-    max-width:250px;
-        position: fixed;
-        bottom: 0;
-        background: #fff;
-        right: 0;
-        -webkit-box-shadow: 0px 0px 2px 0px #2d2d2d;
-        box-shadow: 0px 0px 2px 0px #2d2d2d;
-        height: calc(100% - 80px);
-        padding-top: 2em;
+    width: 75%;
+    max-width: 250px;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    right: 0;
+    -webkit-box-shadow: 0px 0px 2px 0px #2d2d2d;
+    box-shadow: 0px 0px 2px 0px #2d2d2d;
+    height: calc(100% - 80px);
+    padding-top: 2em;
 }
-#elementControls button {   
+
+#elementControls button {
     width: 80%;
     padding: 3px;
     border-radius: 6px;
@@ -327,7 +398,8 @@
     margin: 10px 10%;
     position: relative;
 }
-#elementControls button i {    
+
+#elementControls button i {
     position: absolute;
     top: 0;
     right: 0;
@@ -335,55 +407,65 @@
     padding: 0.8em;
     background: #ca1e51;
 }
-#elementControls button span { 
+
+#elementControls button span {
     display: block;
     background: #fff;
     padding: 0.6em;
     color: #1d2450;
     padding-right: 2em;
 }
+
 .width {
-      -webkit-box-shadow: 0px 0px 3px 0px #aaa;
-      box-shadow: 0px 0px 3px 0px #aaa;
-    width:110px
+    -webkit-box-shadow: 0px 0px 3px 0px #aaa;
+    box-shadow: 0px 0px 3px 0px #aaa;
+    width: 110px
 }
+
 .width:after {
-    content:'%';
+    content: '%';
 }
+
 .width input {
-      padding: 10px;
+    padding: 10px;
     width: calc(100% - 150px);
     border: 0;
     border-bottom: 2px solid #aaa;
     -webkit-transition: border 0.35s;
     transition: border 0.35s;
-     width: 43px;
+    width: 43px;
 }
+
 .width label {
-      margin-left: 5px;
+    margin-left: 5px;
 }
+
 .width:hover input {
     border-bottom: 2px solid #000;
 }
+
 .moveElements p {
-      width: 100%;
+    width: 100%;
     padding: 10px;
     text-align: center;
     margin: 0;
     vertical-align: middle;
 }
+
 .moveElements .fas {
     font-size: 2em;
     vertical-align: middle;
     margin: 0 10px;
 }
+
 .moveElements span {
     vertical-align: middle;
 }
 
 
 /* element view */
-button#removeElement,button#addElement {
+button#removeElement,
+button#addElement {
     font-size: 1em;
     color: #e63434;
     border: 2px solid;
@@ -395,21 +477,24 @@ button#removeElement,button#addElement {
     padding: 1em 0;
     margin-top: 0.25em;
 }
+
 button#removeElement {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
 button#addElement {
-    color:#52c2c1;
-    float:left;
+    color: #52c2c1;
+    float: left;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 /* upload images */
 
-#scrollImage div{
-    height:100%;
-     width: 100%;
+#scrollImage div {
+    height: 100%;
+    width: 100%;
     overflow: auto;
     padding: 2em;
     display: -webkit-box;
@@ -421,6 +506,7 @@ button#addElement {
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
 }
+
 #scrollImage div figure {
     display: inline-block;
     margin: 0;
@@ -428,25 +514,28 @@ button#addElement {
     -webkit-box-shadow: 0px 0px 1em 0px #d8d8d8;
     box-shadow: 0px 0px 1em 0px #d8d8d8;
     vertical-align: middle;
-     margin-bottom: 2%;
+    margin-bottom: 2%;
 
 }
+
 #scrollImage figcaption {
-      white-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 20px;
     font-weight: bold;
-     text-align: center;
+    text-align: center;
 }
+
 #scrollImage img {
     max-height: 200px;
-     margin: 0 auto;
+    margin: 0 auto;
     display: block;
 }
+
 #scrollImage #addImages {
-    
-      margin: 0 auto;
+
+    margin: 0 auto;
     display: block;
     padding: 15px;
     position: fixed;
@@ -457,65 +546,80 @@ button#addElement {
     background: #2d2d2d;
     color: #fff;
     background: #48c2c5;
-    background: linear-gradient(45deg, #48c2c5 1%,#2c327b 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48c2c5', endColorstr='#2c327b',GradientType=1 );
+    background: linear-gradient(45deg, #48c2c5 1%, #2c327b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#48c2c5', endColorstr='#2c327b', GradientType=1);
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: bold;
 }
-    #pressRelease {
-        overflow: auto;
-        width: 100%;
-        padding-bottom: 30px;
-    }
-    #pressContainer {
-        width:100%;
-     padding: 2em 1em;
-    }
+
+#pressRelease {
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+#pressContainer {
+    width: 100%;
+    padding: 2em 1em;
+}
+
 #editControls {
     position: absolute;
     width: 100%;
+    left: 0;
 }
+
 @media (min-width: 500px) and (orientation: portrait) {
     #elementControls {
         height: calc(100% - 100px);
     }
 }
-@media all and (max-width: 500px)  {
+
+@media all and (max-width: 500px) {
     #topEdit {
         font-size: 0.9em;
     }
-    button#removeElement, button#addElement {
-        width:80px;
+
+    button#removeElement,
+    button#addElement {
+        width: 80px;
         margin-top: 0.35em;
     }
+
     #secondRow .buttonGroup {
         display: inline-block;
-     float: none;
+        float: none;
     }
-    #textControls[vis="true"],#imageControls[vis="true"] {
+
+    #textControls[vis="true"],
+    #imageControls[vis="true"] {
         display: inline-block;
     }
-    #textControls, #imageControls {
-        float:none;
+
+    #textControls,
+    #imageControls {
+        float: none;
     }
+
     #secondRow {
-      white-space: nowrap;
-     overflow: auto;
+        white-space: nowrap;
+        overflow: auto;
     }
 }
 
-@media all and (max-width: 500px)  {
+@media all and (max-width: 500px) {
     #titlePress {
-        padding:0;
+        padding: 0;
     }
 }
-@media all and (min-width: 500px)  {
+
+@media all and (min-width: 500px) {
     .rightTitle button {
-        float:left;
+        float: left;
     }
 }
-@media all and (orientation: landscape) {
-}
+
+@media all and (orientation: landscape) {}

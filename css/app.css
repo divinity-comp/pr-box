@@ -608,8 +608,12 @@ body {
     background: #e00000;
     width: 2em;
     height: 2em;
-    color: #ffff;
+    color: #fff;
     font-size: 1.25rem;
+}
+
+.project .delete i {
+    color: #fff;
 }
 
 .hidden_data {
@@ -1068,10 +1072,6 @@ body {
     border-radius: 6px;
 }
 
-#panelLinks ul li:nth-child(1) {
-    width: 92%;
-    margin-top: 20px;
-}
 
 #panelLinks ul li svg,
 #panelLinks ul li .fa,
@@ -1529,7 +1529,7 @@ body {
 
     #alertSystem {
         font-size: 1.8em;
-        padding-top: 0;
+        padding-top: 0.2em;
     }
 
     .hamburger-inner:after {
@@ -1546,10 +1546,6 @@ body {
         width: 45%;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    #panelLinks ul li:nth-child(1) {
-        width: 95%;
     }
 
     #panelLinks ul li i {
@@ -1635,10 +1631,6 @@ body {
     #panelLinks ul li {
         width: 28%;
         margin: 0.5em 0;
-    }
-
-    #panelLinks ul li:nth-child(1) {
-        width: 92%;
     }
 
     #panelLinks ul li .fa {
