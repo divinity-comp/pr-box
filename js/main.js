@@ -538,8 +538,8 @@ function setDashboardDimensions() {
 }
 var camearaOptions;
 
-function getImage() {
-    navigator.camera.getPicture(uploadPhoto, onErrorUpload, camearaOptions);
+function getImageGen() {
+    navigator.camera.getPicture(uploadGenPhoto, onErrorUpload, camearaOptions);
 }
 
 function getProfile() {
@@ -573,7 +573,7 @@ function onErrorUpload(err) {
     errorMessage(err);
 }
 
-function uploadPhoto(imageURI) {
+function uploadGenPhoto(imageURI) {
     var options = new FileUploadOptions();
     options.fileKey = "file";
     options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
