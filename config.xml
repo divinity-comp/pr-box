@@ -17,7 +17,8 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="SplashScreenDelay" value="0" />
     <preference name="FadeSplashScreenDuration" value="250" />
-
+<preference name='phonegap-version' value='cli-7.0.1' />
+<preference name='pgb-builder-version' value='1' />
     <icon src="icon.png" />
     <splash src="splash.png" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
